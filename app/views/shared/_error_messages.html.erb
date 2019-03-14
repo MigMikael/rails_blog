@@ -1,0 +1,10 @@
+<% if @blog_post.errors.any? %>
+    <div style="color:red;">
+        The form contains <%= pluralize(@blog_post.errors.count, "error") %>.
+        <ul>
+        <% @blog_post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+<% end %>

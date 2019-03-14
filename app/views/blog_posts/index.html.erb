@@ -1,0 +1,17 @@
+<% provide(:title, "All Blogs") %>
+<h1>All Blogs</h1>
+
+<div align="left">
+    <% @blog_posts.each do |blog| %>
+        <hr>
+        <h2>
+            - <%= link_to blog.title, blog %> 
+        </h2>
+        |
+        <%= link_to "edit", "#" %>
+        |
+        <%= link_to "delete", blog, method: :delete, data: { confirm: "Your sure" } %>
+        |
+
+    <% end %>
+</div>
